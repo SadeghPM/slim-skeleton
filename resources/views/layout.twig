@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="csrf_name" content="{{ csrf.name }}">
+    <meta name="csrf_value" content="{{ csrf.value }}">
+    <title>{{ config('app.name') }}</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <style>
+        body {
+            padding-top: 5rem;
+        }
+        .starter-template {
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+        h1 {
+            color: #719e40;
+        }
+    </style>
+</head>
+<body>
+{% include 'components/header.twig' %}
+<div class="container">
+{% block body %}
+
+{% endblock %}
+</div>
+
+<script src="{{ asset('js/app.js') }}"></script>
+</body>
+</html>

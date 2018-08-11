@@ -1,0 +1,14 @@
+{% extends "layout.twig" %}
+{% block body %}
+    <div class="starter-template">
+        <h1>{{ config('app.name') }} skeleton</h1>
+        <div>a microframework for PHP</div>
+        {% if name %}
+            <h2>Hello {{ name }}!</h2>
+        {% else %}
+            <p>Try <a href="http://www.slimframework.com">SlimFramework</a></p>
+        {% endif %}
+        {#<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>#}
+    </div>
+
+{% endblock %}

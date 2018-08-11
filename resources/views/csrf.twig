@@ -1,0 +1,14 @@
+{% extends "layout.twig" %}
+{% block body %}
+    <div class="starter-template">
+        <form class="form-inline" action="{{ route('api.hello') }}" method="post" name="test_csrf">
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input type="text"
+                       name="name" id="name" class="form-control" placeholder="enter name" aria-describedby="helpId">
+            </div>
+            <button type="submit" class="btn btn-primary">Say</button>
+        </form>
+    </div>
+
+{% endblock %}
