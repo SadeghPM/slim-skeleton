@@ -2,8 +2,8 @@
 if you worked in laravel then the skeleton structure is familiar to you.skeleton using slimframework and twig for template engine, monolog for logger, Laravel Eloquent for database interactions and laravel mix for js/css operations.
 
 ### Quick start
-+ installation : `composer create-project sadegh-pm/slim-skeleton --prefer-dist [my-app-name]`
-+ copy `env.example.yaml` to `env.yaml` and fill detail
++ installation : `composer create-project sadegh-pm/slim-skeleton [my-app-name]`
++ set database and other configuration at `env.yaml`
 + start server: `composer start`
 + test: `composer test`
 + asset(js/sass) compilation: `npm dev` or `npm prod` for production build. see package.json for more options.

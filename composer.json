@@ -35,11 +35,19 @@
       "Tests\\": "tests/"
     }
   },
-  "config": {
-    "process-timeout": 0
-  },
   "scripts": {
     "start": "php -S localhost:8000 -t public",
-    "test": "phpunit"
-  }
+    "test": "phpunit",
+    "post-root-package-install": [
+      "@php -r \"file_exists('env.yaml') || copy('env.example.yaml', 'env.yaml');\""
+    ]
+  },
+  "config": {
+    "process-timeout": 0,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
