@@ -4,9 +4,9 @@ if you worked in laravel then the skeleton structure is familiar to you.skeleton
 ### Quick start
 + installation : `composer create-project sadegh-pm/slim-skeleton [my-app-name]`
 + set database and other configuration at `env.yaml`
++ install npm packages: `npm install` and compile asset(js/sass): `npm dev` or `npm prod` for production build. see package.json for more options.
 + start server: `composer start`
 + test: `composer test`
-+ asset(js/sass) compilation: `npm dev` or `npm prod` for production build. see package.json for more options.
 
 ### file and directory structure
 + `app`:
