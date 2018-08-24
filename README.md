@@ -23,7 +23,7 @@ if you worked in laravel then the skeleton structure is familiar to you.skeleton
 + `storage`:
     `app` use for upload and other purpose
     `framework`: used for framework usage like twig cache directory
-    `log/log.app`: app log file
+    `log/app.log`: app log file
 + `tests`: test directory
 + `env.yaml` environment configuration file
 
