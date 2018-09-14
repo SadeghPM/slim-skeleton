@@ -190,3 +190,35 @@ CSRF_INPUT;
         return trim($inputs);
     }
 }
+
+if (!function_exists('storage')) {
+
+    /**
+     * get storage path.
+     *
+     * @param null $path
+     * @return string
+     */
+    function storage($path = null)
+    {
+        $storage = __DIR__."/../../storage";
+
+        return realpath($path ? $storage."/".$path : $storage);
+    }
+}
+
+if (!function_exists('resource')) {
+
+    /**
+     * get resource path.
+     *
+     * @param null $path
+     * @return string
+     */
+    function resource($path = null)
+    {
+        $resource = __DIR__."/../../resources";
+
+        return realpath($path ? $resource."/".$path : $resource);
+    }
+}

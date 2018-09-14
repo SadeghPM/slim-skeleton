@@ -1,7 +1,7 @@
 <?php
 return array(
     'twig' => [
-        'template_path' => realpath(__DIR__.'/../resources/views'),
-        'cache' => get_env('twig.cache') ? realpath(__DIR__."/../storage/framework/cache/twig") : false,
+        'template_path' => resource('views'),
+        'cache' => get_env('twig.cache') ? storage("framework/cache/twig") : false,
     ],
 );

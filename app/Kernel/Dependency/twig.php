@@ -5,12 +5,7 @@ container()['view'] = function ($c) {
         config('twig.template_path'),
         ['cache' => config('twig.cache')]
     );
-    // Instantiate and add Slim specific extension
-    $basePath = rtrim(
-        str_ireplace('index.php', '', dependency('request')->getUri()->getBasePath()),
-        '/'
-    );
-    $view->addExtension(new \Slim\Views\TwigExtension($c['router'], $basePath));
+    $view->addExtension(new \Slim\Views\TwigExtension(dependency('router'), config('app.url')));
     $view->addExtension(new \App\Kernel\Dependency\CsrfTwigExtention(dependency('csrf')));
     $view->getEnvironment()->addFunction(new Twig_Function('asset', 'asset'));
     $view->getEnvironment()->addFunction(new Twig_Function('config', 'config'));
