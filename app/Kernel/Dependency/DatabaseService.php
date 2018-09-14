@@ -1,6 +1,8 @@
 <?php
+
 namespace App\Kernel\Dependency;
 
+use Illuminate\Events\Dispatcher;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
@@ -20,6 +22,7 @@ class DatabaseService implements ServiceProviderInterface
         $capsule->addConnection(config('database'));
 
         $capsule->setAsGlobal();
+        $capsule->setEventDispatcher(new Dispatcher());
         $capsule->bootEloquent();
         $pimple['db'] = function ($c) use ($capsule) {
             return $capsule;
