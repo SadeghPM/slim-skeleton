@@ -1,4 +1,9 @@
 <?php
+if (config('app.debug')) {
+    container()['twig_profile'] = function () {
+        return new Twig_Profiler_Profile();
+    };
+}
 //add twig
 container()['view'] = function ($c) {
     $view = new \Slim\Views\Twig(
@@ -15,6 +20,11 @@ container()['view'] = function ($c) {
     $view->getEnvironment()->addFunction(new Twig_Function('dump', 'dump'));
     $view->getEnvironment()->addFunction(new Twig_Function('table', 'table'));
     $view->getEnvironment()->addFunction(new Twig_Function('csrf', 'csrf'));
+
+    if (config('app.debug')) {
+        $view->addExtension(new Twig_Extension_Profiler(dependency('twig_profile')));
+        $view->addExtension(new Twig_Extension_Debug());
+    }
 
     return $view;
 };

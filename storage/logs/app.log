@@ -135,3 +135,35 @@
 [2018-08-11 13:06:45] slim-app.INFO: The args: [] {"uid":"8e512cb"}
 [2018-08-11 21:41:56] slim-app.INFO: home controller [] {"uid":"49d0ac1"}
 [2018-08-11 21:41:56] slim-app.INFO: The args: [] {"uid":"49d0ac1"}
+[2018-09-14 21:59:35] slim-app.ERROR: csrf validation error {"request":null} {"uid":"08ad962"}
+[2018-09-14 21:59:35] slim-app.INFO: home controller [] {"uid":"3aea3e8"}
+[2018-09-14 21:59:35] slim-app.INFO: The args: [] {"uid":"3aea3e8"}
+[2018-09-14 21:59:35] slim-app.INFO: home controller [] {"uid":"9598979"}
+[2018-09-14 21:59:35] slim-app.INFO: The args: {"name":"name"} {"uid":"9598979"}
+[2018-09-14 22:51:53] slim-app.ERROR: csrf validation error {"request":null} {"uid":"15e6ad2"}
+[2018-09-14 22:51:53] slim-app.INFO: home controller [] {"uid":"6ff9ae5"}
+[2018-09-14 22:51:53] slim-app.INFO: The args: [] {"uid":"6ff9ae5"}
+[2018-09-14 22:51:53] slim-app.INFO: home controller [] {"uid":"34ddd82"}
+[2018-09-14 22:51:53] slim-app.INFO: The args: {"name":"name"} {"uid":"34ddd82"}
+[2018-09-14 22:52:14] slim-app.INFO: home controller [] {"uid":"6e3129e"}
+[2018-09-14 22:52:14] slim-app.INFO: The args: [] {"uid":"6e3129e"}
+[2018-09-14 22:52:26] slim-app.INFO: home controller [] {"uid":"aa09602"}
+[2018-09-14 22:52:26] slim-app.INFO: The args: [] {"uid":"aa09602"}
+[2018-09-14 22:53:41] slim-app.INFO: home controller [] {"uid":"cb40b3f"}
+[2018-09-14 22:53:41] slim-app.INFO: The args: [] {"uid":"cb40b3f"}
+[2018-09-14 22:55:48] slim-app.INFO: home controller [] {"uid":"76a83f2"}
+[2018-09-14 22:55:48] slim-app.INFO: The args: [] {"uid":"76a83f2"}
+[2018-09-14 22:55:54] slim-app.INFO: home controller [] {"uid":"fb0d20b"}
+[2018-09-14 22:55:54] slim-app.INFO: The args: [] {"uid":"fb0d20b"}
+[2018-09-14 22:56:31] slim-app.ERROR: csrf validation error {"request":{"jsonrpc":"2.0","method":"login","params":["dev","dev"],"id":1}} {"uid":"0416ee7"}
+[2018-09-14 22:57:16] slim-app.INFO: home controller [] {"uid":"83c31a6"}
+[2018-09-14 22:57:16] slim-app.INFO: The args: [] {"uid":"83c31a6"}
+[2018-09-14 22:57:36] slim-app.ERROR: csrf validation error {"request":{"jsonrpc":"2.0","method":"run","params":[null,{"user":"","hostname":"","path":""},"ls"],"id":1}} {"uid":"eb13958"}
+[2018-09-14 22:57:58] slim-app.ERROR: csrf validation error {"request":{"jsonrpc":"2.0","method":"cd","params":[null,{"user":"","hostname":"","path":""},".."],"id":2}} {"uid":"8e6add0"}
+[2018-09-14 22:59:12] slim-app.ERROR: csrf validation error {"request":{"jsonrpc":"2.0","method":"run","params":[null,{"user":"","hostname":"","path":""},"id"],"id":3}} {"uid":"e79e616"}
+[2018-09-14 22:59:21] slim-app.ERROR: csrf validation error {"request":{"jsonrpc":"2.0","method":"run","params":[null,{"user":"","hostname":"","path":""},"ls -l"],"id":4}} {"uid":"5fac7cf"}
+[2018-09-14 22:59:41] slim-app.INFO: home controller [] {"uid":"df3a27f"}
+[2018-09-14 22:59:41] slim-app.INFO: The args: [] {"uid":"df3a27f"}
+[2018-09-14 22:59:49] slim-app.ERROR: csrf validation error {"request":{"jsonrpc":"2.0","method":"login","params":["dev","34c6fceca75e456f25e7e99531e2425c6c1de443"],"id":1}} {"uid":"46729f7"}
+[2018-09-14 22:59:55] slim-app.ERROR: csrf validation error {"request":{"jsonrpc":"2.0","method":"login","params":["dev","dev"],"id":2}} {"uid":"b4c1ed0"}
+[2018-09-14 23:00:30] slim-app.ERROR: csrf validation error {"request":{"jsonrpc":"2.0","method":"login","params":["dev","dev"],"id":3}} {"uid":"7060053"}

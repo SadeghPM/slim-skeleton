@@ -5,3 +5,6 @@ include "Dependency/error.php";
 include "Dependency/twig.php";
 
 container()->register(new \App\Kernel\Dependency\DatabaseService());
+if (config('app.debug')) {
+    app()->add(new \RunTracy\Middlewares\TracyMiddleware(app()));
+}
