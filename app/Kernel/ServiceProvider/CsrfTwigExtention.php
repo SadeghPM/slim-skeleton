@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Kernel\Dependency;
+namespace App\Kernel\ServiceProvider;
 
 
 class CsrfTwigExtention extends \Twig_Extension implements \Twig_Extension_GlobalsInterface

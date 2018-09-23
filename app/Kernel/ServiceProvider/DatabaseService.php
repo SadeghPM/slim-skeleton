@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Kernel\Dependency;
+namespace App\Kernel\ServiceProvider;
 
 use Illuminate\Events\Dispatcher;
 use Pimple\Container;

@@ -201,9 +201,9 @@ if (!function_exists('storage')) {
      */
     function storage($path = null)
     {
-        $storage = __DIR__."/../../storage";
+        $storage = rootPath("storage");
 
-        return realpath($path ? $storage."/".$path : $storage);
+        return $path ? $storage."/".$path : $storage;
     }
 }
 
@@ -217,8 +217,44 @@ if (!function_exists('resource')) {
      */
     function resource($path = null)
     {
-        $resource = __DIR__."/../../resources";
+        $resource = rootPath("resources");
 
-        return realpath($path ? $resource."/".$path : $resource);
+        return $path ? $resource."/".$path : $resource;
+    }
+}
+
+if (!function_exists('rootPath')) {
+
+    /**
+     * get root path.
+     *
+     * @param null $path
+     * @return string
+     */
+    function rootPath($path = null)
+    {
+        $root = __DIR__."/../..";
+
+        return realpath($path ? $root."/".$path : $root);
+    }
+}
+
+if (!function_exists('runCommand')) {
+
+
+    /**
+     * Helper to run a sub-command from a command.
+     *
+     * @param string $command Command that should be run.
+     * @param \Symfony\Component\Console\Output\OutputInterface|null $output The output to use. If not provided, the output will be silenced.
+     *
+     * @return int 0 if everything went fine, or an error code
+     */
+    function runCommand($command, $output = null)
+    {
+        /** @var \Silly\Application $silly */
+        $silly = dependency(\Silly\Application::class);
+
+        return $silly->runCommand($command, $output);
     }
 }

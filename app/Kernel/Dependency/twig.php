@@ -11,7 +11,7 @@ container()['view'] = function ($c) {
         ['cache' => config('twig.cache')]
     );
     $view->addExtension(new \Slim\Views\TwigExtension(dependency('router'), config('app.url')));
-    $view->addExtension(new \App\Kernel\Dependency\CsrfTwigExtention(dependency('csrf')));
+    $view->addExtension(new \App\Kernel\ServiceProvider\CsrfTwigExtention(dependency('csrf')));
     $view->getEnvironment()->addFunction(new Twig_Function('asset', 'asset'));
     $view->getEnvironment()->addFunction(new Twig_Function('config', 'config'));
     $view->getEnvironment()->addFunction(new Twig_Function('route', 'route'));
