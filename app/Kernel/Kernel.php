@@ -59,7 +59,7 @@ class Kernel
      */
     public function boot()
     {
-        session_start();
+        @session_start();
         date_default_timezone_set(config('app.timezone'));
         $settings = \config('app');
         if (\config('app.debug')) {

@@ -5,6 +5,7 @@ include "Dependency/error.php";
 include "Dependency/twig.php";
 
 container()->register(new \App\Kernel\ServiceProvider\DatabaseService());
+container()->register(new \App\Kernel\ServiceProvider\PaginatorServiceProvider());
 container()->register(new \App\Kernel\ServiceProvider\SillyServiceProvider());
 
 if (config('app.debug')) {

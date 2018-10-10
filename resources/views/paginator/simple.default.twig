@@ -1,0 +1,25 @@
+{% if(paginator.hasPages()) %}
+    <ul class="pagination">
+        {#-- Previous Page Link --#}
+        {% if(paginator.onFirstPage()) %}
+            <li class="disabled">
+                <span>قبلی</span>
+            </li>
+        {% else %}
+            <li><a
+                        href="{{ paginator.previousPageUrl() }}"
+                        rel="prev">قبلی</a></li>
+        {% endif %}
+
+        {#-- Next Page Link --#}
+        {% if(paginator.hasMorePages()) %}
+            <li><a
+                        href="{{ paginator.nextPageUrl() }}"
+                        rel="next">بعدی</a></li>
+        {% else %}
+            <li class="disabled">
+                <span>بعدی</span>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
