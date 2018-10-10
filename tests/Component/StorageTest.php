@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\Cache;
+namespace Tests\Component;
 
 use League\Flysystem\Filesystem;
 use Tests\BaseTestCase;
 
 class StorageTest extends BaseTestCase
 {
-    public function testSetAndGetCacheItem()
+    public function testSaveFileOnStorage()
     {
         /** @var Filesystem $storage */
         $storage = dependency(Filesystem::class);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Cache;
+namespace Tests\Component;
 
 use App\Kernel\Util\Cache;
 use Tests\BaseTestCase;

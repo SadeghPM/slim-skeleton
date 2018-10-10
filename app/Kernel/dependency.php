@@ -5,6 +5,7 @@ include __DIR__."/Dependency/error.php";
 include __DIR__."/Dependency/twig.php";
 include __DIR__."/Dependency/cache.php";
 include __DIR__."/Dependency/storage.php";
+include __DIR__."/Dependency/validator.php";
 
 container()->register(new \App\Kernel\ServiceProvider\DatabaseService());
 container()->register(new \App\Kernel\ServiceProvider\PaginatorServiceProvider());

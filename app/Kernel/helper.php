@@ -310,3 +310,26 @@ if (!function_exists('__')) {
         return trans($key, $replace, $locale);
     }
 }
+
+if (!function_exists('validator')) {
+
+    /**
+     * Create a new Validator instance.
+     *
+     * See full documentation on https://laravel.com/docs/5.5/validation
+     *
+     * @param  array $data
+     * @param  array $rules
+     * @param  array $messages
+     * @param  array $customAttributes
+     *
+     * @return \Illuminate\Validation\Validator
+     */
+    function validator(array $data, array $rules, array $messages = [], array $customAttributes = [])
+    {
+        /** @var \Illuminate\Validation\Factory $validator */
+        $validator = dependency('validator');
+
+        return $validator->make($data, $rules, $messages, $customAttributes);
+    }
+}
