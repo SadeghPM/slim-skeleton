@@ -76,6 +76,7 @@ class Kernel
     {
         require __DIR__."/../Dependency/dependency.php";
         require __DIR__."/../Middleware/middleware.php";
+        require __DIR__."/../Observers/register_observer.php";
         require __DIR__."/../../routes/web.php";
         require __DIR__."/../../routes/api.php";
     }
