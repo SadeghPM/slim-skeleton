@@ -2,6 +2,7 @@
 
 namespace Tests\Functional;
 
+use Tests\BaseTestCase;
 
 class ApiAboutRouteTest extends BaseTestCase
 {

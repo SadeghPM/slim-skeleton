@@ -1,12 +1,13 @@
 <?php
 
-namespace Tests\Functional;
+namespace Tests;
 
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\ResponseInterface;
 use Slim\App;
+use Slim\Http\Environment;
 use Slim\Http\Request;
 use Slim\Http\Response;
-use Slim\Http\Environment;
 
 /**
  * This is an example class that shows how you could set up a method that
@@ -17,6 +18,10 @@ use Slim\Http\Environment;
 class BaseTestCase extends TestCase
 {
     /**
+     * @var App
+     */
+    public $app;
+    /**
      * Use middleware when running application?
      *
      * @var bool
@@ -26,10 +31,11 @@ class BaseTestCase extends TestCase
     /**
      * Process the application given a request method and URI
      *
-     * @param string $requestMethod the request method (e.g. GET, POST, etc.)
-     * @param string $requestUri the request URI
-     * @param array|object|null $requestData the request data
-     * @return \Slim\Http\Response
+     * @param string            $requestMethod the request method (e.g. GET, POST, etc.)
+     * @param string            $requestUri    the request URI
+     * @param array|object|null $requestData   the request data
+     *
+     * @return \Slim\Http\Response|ResponseInterface
      * @throws \Slim\Exception\MethodNotAllowedException
      * @throws \Slim\Exception\NotFoundException
      */
@@ -39,7 +45,7 @@ class BaseTestCase extends TestCase
         $environment = Environment::mock(
             [
                 'REQUEST_METHOD' => $requestMethod,
-                'REQUEST_URI' => $requestUri
+                'REQUEST_URI'    => $requestUri,
             ]
         );
 
@@ -54,13 +60,16 @@ class BaseTestCase extends TestCase
         // Set up a response object
         $response = new Response();
 
-        $kernel = new \App\Kernel\Kernel();
-        $app = $kernel->boot();
-
         // Process the application
-        $response = $app->process($request, $response);
+        $response = $this->app->process($request, $response);
 
         // Return the response
         return $response;
+    }
+
+    protected function setUp()
+    {
+        $kernel = new \App\Kernel\Kernel();
+        $this->app = $kernel->boot();
     }
 }

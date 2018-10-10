@@ -1,8 +1,9 @@
 <?php
-include "Dependency/csrf.php";
-include "Dependency/logger.php";
-include "Dependency/error.php";
-include "Dependency/twig.php";
+include __DIR__."/Dependency/csrf.php";
+include __DIR__."/Dependency/logger.php";
+include __DIR__."/Dependency/error.php";
+include __DIR__."/Dependency/twig.php";
+include __DIR__."/Dependency/cache.php";
 
 container()->register(new \App\Kernel\ServiceProvider\DatabaseService());
 container()->register(new \App\Kernel\ServiceProvider\PaginatorServiceProvider());
