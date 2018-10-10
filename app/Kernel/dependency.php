@@ -7,6 +7,7 @@ include "Dependency/twig.php";
 container()->register(new \App\Kernel\ServiceProvider\DatabaseService());
 container()->register(new \App\Kernel\ServiceProvider\PaginatorServiceProvider());
 container()->register(new \App\Kernel\ServiceProvider\SillyServiceProvider());
+container()->register(new \App\Kernel\ServiceProvider\TranslationService());
 
 if (config('app.debug')) {
     app()->add(new \RunTracy\Middlewares\TracyMiddleware(app()));

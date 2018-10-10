@@ -20,6 +20,8 @@ container()['view'] = function ($c) {
     $view->getEnvironment()->addFunction(new Twig_Function('dump', 'dump'));
     $view->getEnvironment()->addFunction(new Twig_Function('table', 'table'));
     $view->getEnvironment()->addFunction(new Twig_Function('csrf', 'csrf'));
+    $view->getEnvironment()->addFunction(new Twig_Function('__', '__'));
+    $view->getEnvironment()->addFunction(new Twig_Function('trans', 'trans'));
 
     if (config('app.debug')) {
         $view->addExtension(new Twig_Extension_Profiler(dependency('twig_profile')));

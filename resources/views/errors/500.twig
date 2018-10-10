@@ -1,9 +1,9 @@
 {% extends "errors/error.layout.twig" %}
 
 {% block title %}
-    Something went wrong
+    {{ __('error.500.title') }}
 {% endblock %}
 
 {% block message %}
-    Sorry but something went wrong!
+    {{ __('error.500.message') }}
 {% endblock %}

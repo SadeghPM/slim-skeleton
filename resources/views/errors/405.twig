@@ -1,9 +1,9 @@
 {% extends "errors/error.layout.twig" %}
 
 {% block title %}
-    error!method not allowed!
+    {{ __('error.405.title') }}
 {% endblock %}
 
 {% block message %}
-    Error,method not allowed!
+    {{ __('error.405.message') }}
 {% endblock %}

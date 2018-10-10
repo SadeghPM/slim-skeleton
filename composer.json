@@ -15,6 +15,7 @@
     "illuminate/database": "5.5.*",
     "illuminate/events": "5.5.*",
     "illuminate/pagination": "5.5.*",
+    "illuminate/translation": "5.5.*",
     "mnapoli/silly": "^1.7",
     "monolog/monolog": "^1.23",
     "psy/psysh": "@stable",

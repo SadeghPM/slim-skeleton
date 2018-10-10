@@ -1,9 +1,9 @@
 {% extends "errors/error.layout.twig" %}
 
 {% block title %}
-    The page not found
+    {{ __('error.404.title') }}
 {% endblock %}
 
 {% block message %}
-    404 error. The page not found!
+    {{ __('error.404.message') }}
 {% endblock %}

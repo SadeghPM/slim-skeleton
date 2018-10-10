@@ -3,22 +3,22 @@
         {#-- Previous Page Link --#}
         {% if(paginator.onFirstPage()) %}
             <li class="disabled">
-                <span>قبلی</span>
+                <span>{{ __('pagination.prev') }}</span>
             </li>
         {% else %}
             <li><a
                         href="{{ paginator.previousPageUrl() }}"
-                        rel="prev">قبلی</a></li>
+                        rel="prev">{{ __('pagination.prev') }}</a></li>
         {% endif %}
 
         {#-- Next Page Link --#}
         {% if(paginator.hasMorePages()) %}
             <li><a
                         href="{{ paginator.nextPageUrl() }}"
-                        rel="next">بعدی</a></li>
+                        rel="next">{{ __('pagination.next') }}</a></li>
         {% else %}
             <li class="disabled">
-                <span>بعدی</span>
+                <span>{{ __('pagination.next') }}</span>
             </li>
         {% endif %}
     </ul>

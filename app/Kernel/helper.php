@@ -3,8 +3,10 @@
 if (!function_exists('get_env')) {
     /**
      * get app environment config
-     * @param $name
+     *
+     * @param      $name
      * @param null $default
+     *
      * @return mixed|null
      */
     function get_env($name, $default = null)
@@ -17,8 +19,9 @@ if (!function_exists('config')) {
     /**
      * Gets a configuration setting using a simple or nested key. Nested keys are similar to JSON paths that use the dot dot notation.
      *
-     * @param $key
+     * @param      $key
      * @param null $default
+     *
      * @return mixed|null
      */
     function config($key, $default = null)
@@ -56,6 +59,7 @@ if (!function_exists('dependency')) {
      * Finds an entry of the container by its identifier and returns it.
      *
      * @param $name
+     *
      * @return mixed
      * @throws \Psr\Container\NotFoundExceptionInterface
      * @throws \Psr\Container\ContainerExceptionInterface
@@ -71,9 +75,10 @@ if (!function_exists('route')) {
     /**
      * Build the path for a named route including the base path
      *
-     * @param $name
+     * @param       $name
      * @param array $data
      * @param array $queryParams
+     *
      * @return string
      * @throws RuntimeException
      * @throws InvalidArgumentException
@@ -91,7 +96,9 @@ if (!function_exists('asset')) {
 
     /**
      * Get asset full path
+     *
      * @param $file
+     *
      * @return string
      */
     function asset($file)
@@ -107,6 +114,7 @@ if (!function_exists('input')) {
      *
      * @param null $key
      * @param null $default
+     *
      * @return array|mixed
      */
     function input($key, $default = null)
@@ -125,8 +133,9 @@ if (!function_exists('view')) {
      * Output rendered template
      *
      * @param \Psr\Http\Message\ResponseInterface $response
-     * @param $template
-     * @param array $data
+     * @param                                     $template
+     * @param array                               $data
+     *
      * @return \Psr\Http\Message\ResponseInterface
      */
     function view(\Psr\Http\Message\ResponseInterface $response, $template, $data = [])
@@ -142,6 +151,7 @@ if (!function_exists('logger')) {
 
     /**
      * Get logger instance
+     *
      * @return \Monolog\Logger
      */
     function logger()
@@ -156,6 +166,7 @@ if (!function_exists('table')) {
      * Begin a fluent query against a database table.
      *
      * @param $name
+     *
      * @return \Illuminate\Database\Query\Builder
      */
     function table($name)
@@ -182,7 +193,8 @@ if (!function_exists('csrf')) {
         $name = $csrf->getTokenName();
         $value = $csrf->getTokenValue();
 
-        $inputs = <<<CSRF_INPUT
+        $inputs
+            = <<<CSRF_INPUT
             <input type="hidden" name="$nameKey" value="$name">
             <input type="hidden" name="$valueKey" value="$value">
 CSRF_INPUT;
@@ -197,6 +209,7 @@ if (!function_exists('storage')) {
      * get storage path.
      *
      * @param null $path
+     *
      * @return string
      */
     function storage($path = null)
@@ -213,6 +226,7 @@ if (!function_exists('resource')) {
      * get resource path.
      *
      * @param null $path
+     *
      * @return string
      */
     function resource($path = null)
@@ -229,6 +243,7 @@ if (!function_exists('rootPath')) {
      * get root path.
      *
      * @param null $path
+     *
      * @return string
      */
     function rootPath($path = null)
@@ -245,8 +260,8 @@ if (!function_exists('runCommand')) {
     /**
      * Helper to run a sub-command from a command.
      *
-     * @param string $command Command that should be run.
-     * @param \Symfony\Component\Console\Output\OutputInterface|null $output The output to use. If not provided, the output will be silenced.
+     * @param string                                                 $command Command that should be run.
+     * @param \Symfony\Component\Console\Output\OutputInterface|null $output  The output to use. If not provided, the output will be silenced.
      *
      * @return int 0 if everything went fine, or an error code
      */
@@ -256,5 +271,42 @@ if (!function_exists('runCommand')) {
         $silly = dependency(\Silly\Application::class);
 
         return $silly->runCommand($command, $output);
+    }
+}
+
+if (!function_exists('trans')) {
+
+    /**
+     * Get the translation for a given key.
+     *
+     * @param  string $key
+     * @param  array  $replace
+     * @param  string $locale
+     *
+     * @return string|array|null
+     */
+    function trans($key, array $replace = [], $locale = null)
+    {
+        /** @var \Illuminate\Translation\Translator $translator */
+        $translator = dependency(Illuminate\Translation\Translator::class);
+
+        return $translator->get($key, $replace, $locale);
+    }
+}
+
+if (!function_exists('__')) {
+
+    /**
+     * Get the translation for a given key.
+     *
+     * @param  string $key
+     * @param  array  $replace
+     * @param  string $locale
+     *
+     * @return string|array|null
+     */
+    function __($key, array $replace = [], $locale = null)
+    {
+        return trans($key, $replace, $locale);
     }
 }
