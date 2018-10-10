@@ -5,11 +5,12 @@ return [
             'hello [name]' => new \App\Command\HelloWorldCommand(),
         ],
         'core' => [
-            'twig:clear' => new \App\Kernel\Command\TwigCacheClearCommand(),
-            'log:clear' => new \App\Kernel\Command\LogClearCommand(),
-            'app:clear' => new \App\Kernel\Command\AppClearCommand(),
+            'twig:clear'         => new \App\Kernel\Command\TwigCacheClearCommand(),
+            'log:clear'          => new \App\Kernel\Command\LogClearCommand(),
+            'app:clear'          => new \App\Kernel\Command\AppClearCommand(),
             'make:model [model]' => new \App\Kernel\Command\MakeModelCommand(),
-            'shell' => new \App\Kernel\Command\PsyShellCommand(),
+            'shell'              => new \App\Kernel\Command\PsyShellCommand(),
+            'storage:link'       => new \App\Kernel\Command\SymLinkCommand(),
         ],
     ],
 ];
