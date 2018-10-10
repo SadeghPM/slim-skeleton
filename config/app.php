@@ -9,5 +9,6 @@ return array(
         'locale'                 => get_env('app.locale', 'en'),
         'fallback_locale'        => get_env('app.fallback_locale', 'en'),
         'url'                    => get_env('app.url', 'http://localhost'),
+        'key'                    => get_env('app.key'),
     ],
 );
