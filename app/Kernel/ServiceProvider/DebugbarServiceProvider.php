@@ -34,6 +34,7 @@ class DebugbarServiceProvider implements ServiceProviderInterface
             $debugbar->addCollector(new MonologCollector(dependency('logger')));
             $collector = new TraceablePDO(dependency('db')->getDatabaseManager()->getPdo());
             $debugbar->addCollector(new PDOCollector($collector));
+            $debugbar->addCollector(new \DebugBar\DataCollector\ConfigCollector(Kernel::getConfig()->all()));
         }
     }
 }
