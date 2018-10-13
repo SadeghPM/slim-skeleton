@@ -1,7 +1,7 @@
 <?php
 if (config('app.debug')) {
-    container()['phpErrorHandler']
-        = container()['errorHandler'] = function ($container) {
+
+    container()['phpErrorHandler'] = function ($c) {
         /** @var \Monolog\Logger $logger */
         $logger = dependency('logger');
         $whoopsHandler = new \Dopesong\Slim\Error\Whoops();
@@ -19,6 +19,9 @@ if (config('app.debug')) {
         );
 
         return $whoopsHandler;
+    };
+    container()['errorHandler'] = function ($container) {
+        return new \App\Kernel\Util\Error(dependency('phpErrorHandler'));
     };
 } else {
     container()['phpErrorHandler'] = container()['errorHandler'] = function () {

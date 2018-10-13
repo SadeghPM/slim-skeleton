@@ -25,10 +25,6 @@ class DatabaseService implements ServiceProviderInterface
         $capsule->setEventDispatcher(new Dispatcher());
         $capsule->bootEloquent();
 
-        if (config('app.debug')) {
-            $capsule::connection()->enableQueryLog();
-        }
-
         $pimple['db'] = function ($c) use ($capsule) {
             return $capsule;
         };

@@ -12,6 +12,7 @@ class Hello extends BaseController
 
     public function __invoke(Request $request, Response $response, $args): ResponseInterface
     {
+        debugbarMessage("The input is ".input('name'));
         return $response->withJson(['ok' => true, 'message' => 'hello '.$request->getParam('name')]);
     }
 }

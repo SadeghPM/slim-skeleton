@@ -62,9 +62,6 @@ class Kernel
         @session_start();
         date_default_timezone_set(config('app.timezone'));
         $settings = \config('app');
-        if (\config('app.debug')) {
-            $settings = array_merge($settings, ['tracy' => \config('tracy')]);
-        }
         self::$app = new App(['settings' => $settings]);
         require "dependency.php";
         $this->loadUserDependency();

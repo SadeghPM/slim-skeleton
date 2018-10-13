@@ -333,3 +333,25 @@ if (!function_exists('validator')) {
         return $validator->make($data, $rules, $messages, $customAttributes);
     }
 }
+
+if (!function_exists('debugbarMessage')) {
+
+    /**
+     * Add data to debugbar message section
+     *
+     * @param $data
+     *
+     * @return mixed|boolean
+     */
+    function debugbarMessage($data)
+    {
+        if (config('app.debug')) {
+            /** @var \DebugBar\DebugBar $debugbar */
+            $debugbar = dependency('debugbar');
+
+            return $debugbar['messages']->addMessage($data);
+        }
+
+        return false;
+    }
+}
