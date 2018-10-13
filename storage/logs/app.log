@@ -1,0 +1,5 @@
+[2018-10-13 16:40:50] slim-app.ERROR: csrf validation error {"request":null} {"memory_peak_usage":"8 MB","uid":"e3919bf"}
+[2018-10-13 16:40:51] slim-app.INFO: home controller [] {"memory_peak_usage":"8 MB","uid":"acec86b"}
+[2018-10-13 16:40:51] slim-app.INFO: The args: [] {"memory_peak_usage":"8 MB","uid":"acec86b"}
+[2018-10-13 16:40:51] slim-app.INFO: home controller [] {"memory_peak_usage":"8 MB","uid":"46204b6"}
+[2018-10-13 16:40:51] slim-app.INFO: The args: {"name":"name"} {"memory_peak_usage":"8 MB","uid":"46204b6"}

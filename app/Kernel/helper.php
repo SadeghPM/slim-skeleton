@@ -355,3 +355,23 @@ if (!function_exists('debugbarMessage')) {
         return false;
     }
 }
+
+if (!function_exists('fireEvent')) {
+
+    /**
+     * Fire an event and call the listeners.
+     *
+     * @param  string|object $event
+     * @param  mixed         $payload
+     * @param  bool          $halt
+     *
+     * @return array|null
+     */
+    function fireEvent($event, $payload = [], $halt = false)
+    {
+        /** @var \Illuminate\Events\Dispatcher $dispatcher */
+        $dispatcher = dependency('dispatcher');
+
+        return $dispatcher->fire($event, $payload, $halt);
+    }
+}

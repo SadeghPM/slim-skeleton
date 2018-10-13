@@ -12,3 +12,4 @@ container()->register(new \App\Kernel\ServiceProvider\PaginatorServiceProvider()
 container()->register(new \App\Kernel\ServiceProvider\SillyServiceProvider());
 container()->register(new \App\Kernel\ServiceProvider\TranslationService());
 container()->register(new \App\Kernel\ServiceProvider\DebugbarServiceProvider());
+container()->register(new \App\Kernel\ServiceProvider\DispacherServiceProvider());
