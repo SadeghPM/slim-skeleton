@@ -24,7 +24,7 @@ class ErrorPagesTest extends BaseTestCase
     {
         $response = $this->runApp('post', '/');
 
-        $this->assertEquals(406, $response->getStatusCode());
-        $this->assertContains(__('error.406.title'), (string)$response->getBody());
+        $this->assertEquals(405, $response->getStatusCode());
+        $this->assertContains(__('error.405.title'), (string)$response->getBody());
     }
 }
