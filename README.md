@@ -5,7 +5,7 @@ so slim skeleton configured and structured in slim base with some Laravel featur
 skeleton using slimframework for base and twig for template engine, monolog for logger, Laravel Eloquent for database interactions, laravel mix for js/css operations and etc.  
 If you worked with Laravel, then the skeleton structure is familiar to you.  
 
-## Installation and quick start
+### Installation and quick start
 ##### Server Requirements  
 - PHP >= 7.0.0
 - PDO PHP Extension
@@ -23,7 +23,7 @@ $ composer create-project sadegh-pm/slim-skeleton app-name
 + start server: `php cli serve` or `composer start`
 + test: `composer test`
 
-## Files and directories structure
+### Files and directories structure
 + `app`:
     + `Command`: Define your custom command for cli 
     + `Controller`: Your app controllers
@@ -53,7 +53,7 @@ $ composer create-project sadegh-pm/slim-skeleton app-name
 + `tests`: Test directory
 + `env.yaml` Environment configuration file
 
-## Local Development
+### Local Development
 If you need develop in local server you may use Skeleton core command or Composer command.
  This commands will start a development server at http://localhost:8000
 ``` bash
@@ -64,14 +64,14 @@ $ php cli serve
 $ composer start
 ```
 
-## Deploying to a shared hosts
+### Deploying to a shared hosts
 - Coping all directories and files from public directory to public_html in your host
 - Coping all other directories and files to one before directory of public_html
 - Edit index.php in public_html and fix path for boot.php file (Maybe like "/../slim-skeleton/bootstrap/boot.php")
 - Edit app url in env.yaml
 - Visit your app url and every think must be ok
 
-## Configuration Files
+### Configuration Files
 All of the configuration files are stored in the config directory.  
 you may use the get_env helper to retrieve values from these variables in your configuration files <strong>but if you need value
 in app or twig just use config helper like next section.</strong>
@@ -85,20 +85,20 @@ You may easily access your configuration values using the global
 $value = config('app.timezone');
 ```
 
-## Cache
+### Cache
 Skeleton use PSR-6 Cache and provides redis and file cache driver you can define in env.yaml.
  The cache configuration is located at `config/cache.php`.
  In this file you may specify which cache driver you would like to be used by default throughout your application.  
  
   You can see all cache method in `app/Kernel/Util/Cache.php` or in test file for cache in `tests/Component/CacheTest.php`
 
-## Validation
+### Validation
 Skeleton use Laravel validation and with validator helper you can use it for
 validate request data. (You can see full documentation in [Laravel validation docs](https://laravel.com/docs/validation))  
 
 You can see simple example for validation in `tests/Component/ValidatorTest.php`
   
-## Command
+### Command
 The slim skeleton use [Silly CLI](https://github.com/mnapoli/silly) that just an implementation over the Symfony Console.
 You can read the [Silly CLI documentation](https://github.com/mnapoli/silly) or [Symfony documentation](https://symfony.com/doc/current/components/console.html) to learn everything you can do with it.  
  
@@ -118,14 +118,14 @@ For define new custom command:
  
 <strong>You can see core command file in `app/Kernel/Command` and use that for create custom command.</strong>
     
-## Events
+### Events
 Events provides a simple observer implementation, allowing you to subscribe and listen for various events that occur in your application.
 - Create Event classes in the `app/Events` directory
 - Create their listeners in `app/Listeners`
 - Register events in `config/listen.php`
 - Use `fireEvent` helper for call events
 
-## Localization
+### Localization
 Localization features provide a convenient way to retrieve strings in various languages,
  allowing you to easily support multiple languages within your application.
  Language strings are stored in files within the `resources/lang` directory.
@@ -133,7 +133,7 @@ Localization features provide a convenient way to retrieve strings in various la
  all language files return an array of key value strings.  
  You can use `trans` or `__`(2 underscore) helpers in app and twig template for get value from local file.
 
-## Helpers <a id="helper-section"></a>
+### Helpers <a id="helper-section"></a>
 Skeleton comes with some helpers. For more information see `app/Kernel/helper.php`:
 + `route($name,$params)`(#route-anchors) In php and twig Build the path for a named route including the base path
 + `config($key,$default)` In php and twig get a configuration setting using a simple or nested key. Nested keys are similar to JSON paths that use the dot dot notation.
@@ -142,7 +142,7 @@ Skeleton comes with some helpers. For more information see `app/Kernel/helper.ph
 + `table($tableName)` In php and twig Begin a fluent query against a database table using eloquent query builder
 + `trans($key)` In php and twig get value from locale files
 
-## Database
+### Database
 #### Eloquent ORM
 Skeleton use Laravel eloquent and database system, For more information about eloquent you can see
 [Laravel eloquent documentations](https://laravel.com/docs/5.7/eloquent), you can use
@@ -156,7 +156,7 @@ Each of these methods receives the model as their only argument.
 - Add observer class in `app/Observers`
 - Register observer in `app/Observers/register_observer.php`
 
-## Storage
+### Storage
 Skeleton use powerful [filesystem](https://github.com/thephpleague/flysystem)
 you can see more information in [Filesystem documentations](http://flysystem.thephpleague.com/docs/)
 or refer to [Laravel file storage documentations](https://laravel.com/docs/5.7/filesystem).  
@@ -181,7 +181,7 @@ The below section is test for how to use storage (`tests/Component/StorageTest.p
     }
 ```
 
-## Twig
+### Twig
 Skeleton use twig template engine that is a modern template engine for PHP and:  
 
 <strong>Fast:</strong> Twig compiles templates down to plain optimized PHP code. The overhead compared to regular PHP code was reduced to the very minimum.  
@@ -195,10 +195,10 @@ For more information about twig you can see [Twig page](https://twig.symfony.com
 - All templates located at `resources/views` directory.
 - you can use all helpers in twig files.
 
-## Test
+### Test
 The `tests/Functional` include sample tests.phpunit used for testing. Define your functional test in this directory.
 
 use `composer test` for run tests.
 
-## License
+### License
 The Slim-skeleton framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
